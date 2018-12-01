@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 15:53:02 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/01 20:46:09 by nde-maes         ###   ########.fr       */
+/*   Created: 2018/11/19 13:56:56 by nde-maes          #+#    #+#             */
+/*   Updated: 2018/11/19 13:57:08 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# define BUFF_SIZE 32
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+char	*ft_strcat(char *s1, const char *s2)
+{
+	ft_strcpy(s1 + ft_strlen(s1), s2);
+	return (s1);
+}

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 15:53:02 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/01 20:46:09 by nde-maes         ###   ########.fr       */
+/*   Created: 2018/11/19 14:02:06 by nde-maes          #+#    #+#             */
+/*   Updated: 2018/11/27 08:54:03 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+char	*ft_strcpy(char *dst, const char *src)
+{
+	int			i;
 
-# define BUFF_SIZE 32
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+	i = -1;
+	while (src[++i])
+		dst[i] = src[i];
+	dst[i] = 0;
+	return (dst);
+}

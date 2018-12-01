@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 15:53:02 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/01 20:46:09 by nde-maes         ###   ########.fr       */
+/*   Created: 2018/11/12 18:10:57 by nde-maes          #+#    #+#             */
+/*   Updated: 2018/11/27 08:51:10 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <string.h>
 
-# define BUFF_SIZE 32
+/*
+** As opposed to strcmp which look at all but stops at `0` bytes,
+** memcmp introspects all bytes (including the `0` byte)
+*/
 
-int		get_next_line(const int fd, char **line);
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t		i;
 
-#endif
+	i = -1;
+	while (++i < n)
+		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
+			return (int)(((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+	return (0);
+}

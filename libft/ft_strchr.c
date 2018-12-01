@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 15:53:02 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/01 20:46:09 by nde-maes         ###   ########.fr       */
+/*   Created: 2018/11/19 14:01:27 by nde-maes          #+#    #+#             */
+/*   Updated: 2018/11/19 14:08:48 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <string.h>
 
-# define BUFF_SIZE 32
+char	*ft_strchr(const char *s, int c)
+{
+	int		i;
 
-int		get_next_line(const int fd, char **line);
-
-#endif
+	i = -1;
+	while (s[++i])
+		if (s[i] == (char)c)
+			return (char*)(s + i);
+	if (c == 0)
+		return (char*)(s + i);
+	return (NULL);
+}

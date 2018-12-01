@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 15:53:02 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/01 20:46:09 by nde-maes         ###   ########.fr       */
+/*   Created: 2018/11/19 18:39:48 by nde-maes          #+#    #+#             */
+/*   Updated: 2018/11/27 10:02:35 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <string.h>
+#include "libft.h"
 
-# define BUFF_SIZE 32
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char		*ns;
+	int			i;
 
-int		get_next_line(const int fd, char **line);
-
-#endif
+	if (!s || !f)
+		return (NULL);
+	if ((ns = ft_strnew(ft_strlen(s))) == NULL)
+		return (NULL);
+	i = -1;
+	while (s[++i])
+		ns[i] = f(i, s[i]);
+	return (ns);
+}
