@@ -71,7 +71,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc includes/$@ $^
+	ar rc $@ $^
 
 # syntax
 # target:dependency
@@ -84,7 +84,7 @@ $(NAME): $(OBJ)
 # $^ refers to all the rule's dependencies (the part after the target and the colon)
 
 %.o:%.c
-	gcc -Wall -Wextra -Werror -o $@ -c $<
+	gcc -Wall -Wextra -Werror -I includes -o $@ -c $<
 
 .PHONY: clean fclean re
 

@@ -12,20 +12,16 @@
 ** => it depends what we return in *line
 */
 
-void		print_buff(char **line)
-{
-	write(1, *line, BUFF_SIZE);
-	write(1, "\n", 1);
-}
-
-int			main(void)
+int			main(int argc, char **argv)
 {
 	int			fd;
 	int			ret;
 	int			call_counter;
 	char		**line = NULL;
 
-	if ((fd = open("test.txt", O_RDONLY)) == -1)
+	if (argc != 2)
+		return (1);
+	if ((fd = open(argv[2], O_RDONLY)) == -1)
 	{
 		dprintf(2, "Error opening the file\n");
 		return (1);
