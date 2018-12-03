@@ -6,7 +6,7 @@
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 15:58:04 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/03 12:59:57 by nde-maes         ###   ########.fr       */
+/*   Updated: 2018/12/03 16:15:16 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,8 @@ int				get_next_line(const int fd, char **line)
 	int				nl;
 	int				ret;
 
-	if (!tmp_buff)
-		if (!(tmp_buff = ft_strnew((unsigned int)9)))
-			return (-1);
+	if (!tmp_buff && !(tmp_buff = ft_strnew((unsigned int)9)))
+		return (-1);
 	if (!(read_buff = ft_strnew((unsigned int)(BUFF_SIZE + 1))))
 		return (-1);
 	read_flag = 0;
