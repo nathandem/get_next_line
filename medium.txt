@@ -1,0 +1,6 @@
+This is a text of medium length.
+The idea is to see how the program get_next_line performs on a medium length text.
+
+Watch the 4th line.
+
+Or you'll miss the 6th.
