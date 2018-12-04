@@ -6,13 +6,11 @@
 /*   By: nde-maes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 13:32:24 by nde-maes          #+#    #+#             */
-/*   Updated: 2018/12/04 17:33:49 by nde-maes         ###   ########.fr       */
+/*   Updated: 2018/12/04 17:43:05 by nde-maes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#include <stdio.h>
 
 char		*strnewfromfree(char *s, int start)
 {
